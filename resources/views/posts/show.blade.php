@@ -1,13 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laravel Blog</title>
-</head>
-<body>
-    <h1>Post: {{ $post[0]->title }}</h1>
-    <div>{{ $post[0]->author }} / {{ $post[0]->date->diffForHumans() }}</div>
-    <div>{{ $post[0]->contents }}</div>
-</body>
-</html>
+<x-app-layout>
+    <div class="mt-10 space-y-5 max-w-none">
+        <h1 class="text-2xl font-bold">Post: {{ $post->title }}</h1>
+        <x-post-meta :post="$post"/>
+        <div>{{ $post->contents }}</div>
+    </div>
+</x-app-layout>

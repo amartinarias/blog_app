@@ -1,8 +1,10 @@
 <x-app-layout>
+
     @if ($posts->count())
+
+    <h1 class="mt-10 text-3xl font-semibold">Latest posts by {{ $authorName }}</h1>
         <ul class="mt-10 space-y-10">
             @foreach ($posts as $post)
-
                 <x-post-item :post="$post"/>
             @endforeach
         </ul>
